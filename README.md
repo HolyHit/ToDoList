@@ -7,3 +7,8 @@ Requirements: Node.js installed, PostgresSQL installed
 1. Use the todolistproject_scheme.sql file to create the necessary database in PostgresSQL
 2. Install the node packages with 'npm i'
 3. Adjust your credentials where the database connection is established in index.js (ln 35-42)
+
+### Possible future changes
+1. Make the frontend pretty
+2. Multiple To-Do lists per user
+3. Making it deployable
