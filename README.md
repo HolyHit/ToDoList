@@ -4,6 +4,6 @@
 ### Setup instructions
 Requirements: Node.js installed, PostgresSQL installed
 
-1.) Use the todolistproject_scheme.sql file to create the necessary database in PostgresSQL
-2.) Install the node packages with 'npm i'
-3.) Adjust your credentials where the database connection is established in index.js (ln 35-42)
+1. Use the todolistproject_scheme.sql file to create the necessary database in PostgresSQL
+2. Install the node packages with 'npm i'
+3. Adjust your credentials where the database connection is established in index.js (ln 35-42)
