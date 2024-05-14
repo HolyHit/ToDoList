@@ -1,0 +1,44 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+}
+
+.toDoListContainer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.toDoListAdd {
+    box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 4px 0px, rgba(0, 0, 0, .3) 0px 30px 100px -24px;
+}
+
+.toDoListItem {
+    background-color: white;
+    margin: 0px;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: .3rem;
+    box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 4px 0px, rgba(0, 0, 0, .3) 0px 30px 100px -24px;
+    min-height: 44px;
+}
+
+.toDoListItem p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+.crossedout {
+    text-decoration: line-through;
+}

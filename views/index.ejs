@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs'); -%>
+
+
+    <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="jumbotron bg-success text-white px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                        <h2>Welcome to my To-Do List tracker</h1>
+                        <p>Please sign in through this login.</p>
+                    </div>
+                    <form class="jumbotron" action="/login" method="post">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input  name="username"  class="form-control" placeholder="Username" required="" autofocus="">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" name="password"  class="form-control" placeholder="Password" required="">
+                        <!-- <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                        </div> -->
+                        <button class="btn btn-lg btn-success btn-block" type="submit" value="login" name="choice">Sign in</button>
+                    </form>
+
+                    <p>Or in case you haven't registered yet:</p>
+
+                    <form class="jumbotron" action="/register" method="post">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input  name="username"  class="form-control" placeholder="Username" required="" autofocus="">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" name="password"  class="form-control" placeholder="Password" required="">
+                        <!-- <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                        </div> -->
+                        <button class="btn btn-lg btn-success btn-block" type="submit" value="register" name="choice">Register</button>
+                    </form>
+                </div>
+            </div>  
+    </div>
+
+
+<%- include('../partials/footer.ejs'); -%>
+
+

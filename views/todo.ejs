@@ -1,0 +1,92 @@
+<%- include('../partials/header.ejs'); -%>
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <!-- Title -->
+            <div class="jumbotron bg-success text-white text-center" style="padding: 5px">
+                <h2><%= currentUser %></h2>
+            </div>
+
+            
+            <!-- The List Items -->
+            <div class="jumbotron toDoListContainer" >
+                <!-- Adding -->
+                <form action="/add" method="post" class="form-inline">
+                    <input class="form-control input-lg flex-fill toDoListAdd" type="text" placeholder="New Item" name="newItem">
+                    <button class="btn btn-success" type="submit" name="list">+</button>
+                </form>
+
+                <hr>
+                <% if (listItems.length == 0) { %>
+                    <p style="text-align: center;">You get to relax!</p>
+                <% } %>
+                <% for(let item of listItems){%> 
+                    <div class="form-inline">
+
+                        <div class="item row toDoListItem flex-fill">
+                            <% if (item.isdone == true) { %>
+                                <form  action="/check" method="post" value="<%=item.id%>" name="<%= item.id %>">
+                                    <button class="btn btn-success checkbox" type="submit" name="crossItemId" value="<%= item.id %>"></button>
+                                    <input hidden name="crossItemIsCrossed" value="<%= item.isdone %>">
+                                </form>
+
+                                <p class="crossedout" id="<%=item.id%>">
+                                    <%=item.item%>
+                                </p>
+                            <% } else if (item.isdone == false) {%>
+                                <form  action="/check" method="post" value="<%=item.id%>" >
+                                    <button class="btn btn-success checkbox" type="submit" name="crossItemId" value="<%= item.id %>"></button>
+                                    <input hidden name="crossItemIsCrossed" value="<%= item.isdone %>">
+                                </form>
+                                <p id="<%=item.id%>">
+                                    <%=item.item%>
+                                </p>
+                            <% } %>
+
+                        </div>
+                        <form action="/delete" method="post">
+                            <button class="btn btn-danger" type="submit" value="<%= item.id %>" name="deleteItemId">X</button>
+                        </form>
+                    </div>
+                <% } %>
+
+                <hr>
+
+                <form action="/logout" method="post" class="form-inline">
+                    <button class="btn btn-danger">Log out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+
+
+
+<script>
+ $( ".checkbox" ).on( "click", function() {
+        let  itemToChange = "#" + this.value;
+        if ($(itemToChange).hasClass("crossedout")) {
+            $(itemToChange).removeClass("crossedout");
+        } else {
+            $(itemToChange).addClass("crossedout");
+        }
+ });
+
+
+</script>
+
+<%- include('../partials/footer.ejs'); -%>
+
+
+
+
+
+
+
+
+
